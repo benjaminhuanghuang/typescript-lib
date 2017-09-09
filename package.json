@@ -4,19 +4,26 @@
   "description": "",
   "main": "commands.js",
   "scripts": {
-    "start": "node ./build/index.js",
-    "build": "tsc -p tsconfig.json --watch"
+    "start": "node ./build/index.js prompt",
+    "build": "npm run clean && tsc -p tsconfig.json",
+    "build-watch": "tsc -p tsconfig.json --watch",
+    "clean": "rimraf build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "shelljs": "^0.7.8",
-    "yargs": "^8.0.2"
+    "yargs": "^8.0.2",
+    "prompt-sync": "^4.1.5"
   },
   "devDependencies": {
     "typescript": "^2.5.2",
-    "@types/lodash.merge": "^4.6.2",
+    "rimraf": "^2.6.1",
+    "minimist": "^1.2.0",
+    "pad-right": "^0.2.2",
+    "wordwrap": "^1.0.0",
+    "lodash.merge": "^4.6.0",
     "@types/node": "^8.0.7"
   }
 }
